@@ -1,0 +1,15 @@
+string(
+  replace(
+    replace(
+      replace(
+        14.data;
+        "__RECIPIENT_NAME__";
+        1.first_name
+      );
+      "__BUSINESS_TYPE__";
+      1.business_type
+    );
+    "__DATE__";
+    formatDate(now; "D MMMM YYYY")
+  )
+)
