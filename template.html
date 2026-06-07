@@ -457,11 +457,11 @@ body {
 /* ── RESPONSIVE ── */
 @media (max-width: 560px) {
   .outcomes { grid-template-columns: 1fr; }
+  .proof-band-inner { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
   .rf-inner { flex-direction: column; align-items: flex-start; }
   .footer-copy { text-align: left; }
   .cta-details { gap: 1.5rem; }
   .cover-meta { gap: 1.5rem; }
-  .proof-band-inner { gap: 1.25rem; }
   .call-details-bar { grid-template-columns: 1fr 1fr; }
   .s2-stats { flex-direction: column; gap: 2px; }
   .s2-stat { min-width: unset; }
@@ -541,15 +541,15 @@ body {
     <div class="s2-stats" role="list" aria-label="Cost indicators">
       <div class="s2-stat" role="listitem">
         <p class="s2-stat-num">__STAT_1_VALUE__</p>
-        <p class="s2-stat-label">__STAT_1_LABEL__</p>
+        <p class="s2-stat-label" style="margin-top:0.5rem;">__STAT_1_LABEL__</p>
       </div>
       <div class="s2-stat" role="listitem">
         <p class="s2-stat-num">__STAT_2_VALUE__</p>
-        <p class="s2-stat-label">__STAT_2_LABEL__</p>
+        <p class="s2-stat-label" style="margin-top:0.5rem;">__STAT_2_LABEL__</p>
       </div>
       <div class="s2-stat" role="listitem">
         <p class="s2-stat-num">__STAT_3_VALUE__</p>
-        <p class="s2-stat-label">__STAT_3_LABEL__</p>
+        <p class="s2-stat-label" style="margin-top:0.5rem;">__STAT_3_LABEL__</p>
       </div>
     </div>
   </div>
