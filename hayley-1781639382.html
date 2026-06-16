@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Growth Bottleneck Snapshot—Hayley · Sunday Co</title>
+<meta name="description" content="Your personalised Growth Bottleneck Snapshot from Sunday Co.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --blue:       #1767F6;
+  --ink:        #08204A;
+  --blush:      #FDF4F2;
+  --light-blue: #EAF1FE;
+  --white:      #FFFFFF;
+  --body-text:  #687085;
+  --muted:      #8A8490;
+  --border:     rgba(8,32,74,0.1);
+
+  --anton:  'Anton', Impact, sans-serif;
+  --serif:  'Playfair Display', Georgia, serif;
+  --sans:   'Inter', system-ui, sans-serif;
+
+  --gutter: clamp(1.5rem, 6vw, 4rem);
+  --max:    720px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--blush);
+  color: var(--body-text);
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* ── LAYOUT ── */
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* ── NAV ── */
+.report-nav {
+  background: var(--blue);
+  padding: 1rem var(--gutter);
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-brand {
+  font-family: var(--anton);
+  font-size: 1.4rem; font-weight: 400;
+  letter-spacing: 0.04em; color: white; text-decoration: none;
+}
+.nav-label {
+  font-family: var(--sans);
+  font-size: 0.62rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+
+/* ── COVER ── */
+.cover {
+  background: var(--blue);
+  padding: clamp(3rem, 8vw, 6rem) var(--gutter) clamp(3rem, 8vw, 5rem);
+  position: relative; overflow: hidden;
+}
+.cover-inner { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; }
+
+.cover-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.3rem 0.85rem; margin-bottom: 2rem;
+}
+.badge-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: rgba(255,255,255,0.7);
+  animation: pulse 2.5s ease infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50% { opacity:0.3; transform:scale(0.65); }
+}
+.badge-text {
+  font-family: var(--sans);
+  font-size: 0.62rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+.cover-for {
+  font-family: var(--sans);
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4); margin-bottom: 0.5rem;
+}
+.cover-name {
+  font-family: var(--anton);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 400; color: white;
+  letter-spacing: 0.03em; line-height: 0.95;
+  margin-bottom: 0.5rem;
+}
+.cover-title {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 600; font-style: normal;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 2rem; line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.cover-meta {
+  display: flex; gap: 2.5rem; flex-wrap: wrap;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+.meta-label {
+  font-family: var(--sans);
+  font-size: 0.6rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 0.2rem;
+}
+.meta-value {
+  font-family: var(--sans);
+  font-size: 0.82rem; font-weight: 400;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ── JUMP NAV ── */
+.jump-nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 var(--gutter);
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.jump-nav::-webkit-scrollbar { display: none; }
+.jump-inner {
+  display: flex; max-width: var(--max);
+  margin: 0 auto; white-space: nowrap;
+}
+.jump-link {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.62rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+  padding: 0.875rem 0.875rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.jump-link:hover { color: var(--blue); border-color: var(--blue); }
+.jump-link.active { color: var(--blue); border-color: var(--blue); }
+
+/* ── SHARED SECTION STYLES ── */
+.rs { padding: clamp(2.5rem, 6vw, 4rem) var(--gutter); }
+.si { max-width: var(--max); margin: 0 auto; }
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.62rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 0.75rem;
+}
+
+/* ── UNIFIED BODY TEXT ── */
+.section-body,
+.s3-intro,
+.area-body,
+.outcome-text,
+.proof-stat-body,
+.call-step-body,
+.closing-line,
+.s6-body {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.75;
+}
+.section-body      { color: var(--body-text); }
+.s3-intro          { color: var(--muted); margin-bottom: 2rem; }
+.area-body         { color: var(--body-text); }
+.outcome-text      { color: rgba(255,255,255,0.75); padding-top: 4px; }
+.proof-stat-body   { color: var(--muted); }
+.call-step-body    { color: var(--body-text); }
+.closing-line      { font-family: var(--serif); font-style: italic; color: var(--ink); margin-bottom: 0.4rem; }
+.s6-body           { color: rgba(255,255,255,0.6); max-width: 600px; margin: 0 auto 2.5rem; }
+
+.section-headline {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 600; line-height: 1.1;
+  letter-spacing: -0.02em; color: var(--blue);
+  margin-bottom: 1.25rem;
+}
+.section-headline em { font-style: italic; font-weight: 400; }
+
+/* ── SECTION 1—SITUATION ── */
+.s1 { background: var(--white); }
+.s1 .section-headline { color: var(--ink); }
+
+/* ── SECTION 2—COST ── */
+.s2 { background: var(--blush); }
+.s2-stats {
+  display: flex; gap: 1px;
+  margin-top: 2rem; flex-wrap: wrap;
+}
+.s2-stat {
+  flex: 1; min-width: 140px;
+  background: var(--white);
+  padding: 1.25rem 1.5rem;
+  border-top: 3px solid var(--blue);
+}
+.s2-stat-num {
+  font-family: var(--anton);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 400; color: var(--blue);
+  line-height: 1; letter-spacing: 0.02em;
+  margin-bottom: 0.3rem;
+}
+.s2-stat-label {
+  font-family: var(--sans);
+  font-size: 0.78rem; font-weight: 400;
+  color: var(--muted); line-height: 1.4;
+}
+
+/* ── SECTION 3—THREE AREAS ── */
+.s3 { background: var(--white); }
+.areas { display: flex; flex-direction: column; gap: 1px; margin-top: 1.5rem; }
+.area {
+  background: var(--blush); padding: 1.5rem;
+  border-left: 3px solid var(--blue);
+  transition: background 0.2s;
+}
+.area:hover { background: var(--light-blue); }
+.area-num {
+  font-family: var(--anton);
+  font-size: 1.5rem; font-weight: 400;
+  color: var(--blue); margin-bottom: 0.5rem; letter-spacing: 0.04em;
+}
+.area-name {
+  font-family: var(--serif);
+  font-size: 1.2rem; font-weight: 600;
+  color: var(--ink); margin-bottom: 0.6rem; line-height: 1.2;
+}
+
+/* ── SECTION 4—WHAT BECOMES POSSIBLE ── */
+.s4 { background: var(--ink); }
+.s4 .eyebrow { color: rgba(255,255,255,0.4); }
+.s4 .section-headline { color: white; }
+.s4 .section-body { color: rgba(255,255,255,0.6); }
+.outcomes {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0 1.5rem; margin-top: 2rem;
+}
+.outcome {
+  background: transparent;
+  padding: 1.25rem 0 1rem;
+  display: flex; align-items: flex-start; gap: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+.outcome-mark {
+  font-family: var(--anton);
+  font-size: 1.5rem; font-weight: 400;
+  color: white; line-height: 1;
+  letter-spacing: 0.02em; flex-shrink: 0;
+  padding-top: 1px;
+}
+
+/* ── SECTION 5—NEXT STEP ── */
+.s5 { background: var(--light-blue); }
+.s5 .section-headline { color: var(--ink); }
+.s5 .section-body { color: var(--body-text); }
+
+/* ── PROOF STAT BAND ── */
+.proof-band {
+  background: var(--blush);
+  padding: clamp(2rem, 4vw, 3rem) var(--gutter);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.proof-band-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; align-items: center; gap: 2rem;
+  flex-wrap: wrap;
+}
+.proof-stat-number {
+  font-family: var(--anton);
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 400; color: var(--blue);
+  line-height: 1; letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+.proof-stat-text { flex: 1; min-width: 200px; }
+.proof-stat-headline {
+  font-family: var(--serif);
+  font-size: 1.3rem; font-weight: 400;
+  color: var(--ink); line-height: 1.3; margin-bottom: 0.35rem;
+}
+.proof-stat-source {
+  font-family: var(--sans);
+  font-size: 0.68rem; font-weight: 400;
+  color: var(--muted); margin-top: 0.4rem;
+  font-style: italic;
+}
+
+/* ── STRATEGY CALL SECTION ── */
+.s-call { background: var(--white); }
+.s-call .section-headline { color: var(--ink); }
+
+.call-steps {
+  display: flex; flex-direction: column;
+  gap: 0; margin-top: 2rem;
+}
+.call-step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 1.5rem; align-items: start;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+}
+.call-step-num {
+  font-family: var(--anton);
+  font-size: 1.5rem; font-weight: 400;
+  color: var(--blue); line-height: 1;
+  letter-spacing: 0.02em; padding-top: 2px;
+}
+.call-step-content {}
+.call-step-title {
+  font-family: var(--serif);
+  font-size: 1.3rem; font-weight: 400;
+  color: var(--ink); margin-bottom: 0.4rem; line-height: 1.2;
+}
+
+.call-details-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-top: 2.5rem;
+}
+.call-detail-item {
+  background: transparent;
+  padding: 1rem 0.5rem;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0.25rem; text-align: center;
+  border: none;
+}
+.call-detail-label {
+  font-family: var(--sans);
+  font-size: 0.6rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue);
+}
+.call-detail-value {
+  font-family: var(--sans);
+  font-size: 0.88rem; font-weight: 500; color: var(--ink);
+}
+
+.reassurance-line {
+  font-family: var(--serif);
+  font-size: 1.3rem; font-weight: 400; font-style: normal;
+  color: var(--ink); text-align: center;
+  margin-top: 2rem; line-height: 1.5;
+}
+
+/* ── SECTION 6—CTA ── */
+.s6 {
+  background: var(--blue);
+  padding: clamp(3rem, 8vw, 5rem) var(--gutter);
+}
+.s6-inner { max-width: var(--max); margin: 0 auto; text-align: center; }
+.s6 .eyebrow { justify-content: center; color: rgba(255,255,255,0.4); }
+.s6-headline {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 600; line-height: 1.05;
+  letter-spacing: -0.02em; color: white; margin-bottom: 1.25rem;
+}
+.s6-headline em { font-style: italic; font-weight: 400; }
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: white; color: var(--blue);
+  font-family: var(--sans);
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  text-decoration: none; padding: 1rem 2.5rem;
+  border-radius: 100px;
+  transition: opacity 0.2s, transform 0.2s;
+  margin-bottom: 0;
+}
+.cta-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+.cta-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+.cta-details {
+  display: flex; justify-content: center;
+  gap: 2.5rem; flex-wrap: wrap;
+  margin-top: 2.5rem; padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+.cd-val {
+  font-family: var(--anton);
+  font-size: 1.8rem; font-weight: 400;
+  color: white; line-height: 1;
+  letter-spacing: 0.02em; margin-bottom: 0.25rem;
+}
+.cd-lbl {
+  font-family: var(--sans);
+  font-size: 0.62rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ── CLOSING ── */
+.closing {
+  background: var(--blush);
+  padding: clamp(2rem, 5vw, 3.5rem) var(--gutter);
+  border-top: 1px solid var(--border);
+}
+.closing-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+.closing-avatar {
+  width: 72px; height: 72px; border-radius: 50%;
+  overflow: hidden; flex-shrink: 0;
+  border: 2px solid var(--border);
+}
+.closing-avatar img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  display: block;
+}
+.closing-text { flex: 1; min-width: 200px; }
+.closing-sig {
+  font-family: var(--sans);
+  font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.08em; color: var(--muted);
+}
+
+/* ── FOOTER ── */
+.report-footer { background: var(--ink); padding: 2rem var(--gutter); }
+.rf-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+}
+.footer-brand {
+  font-family: var(--anton);
+  font-size: 0.95rem; font-weight: 400;
+  letter-spacing: 0.04em; color: rgba(255,255,255,0.9);
+}
+.footer-copy {
+  font-family: var(--sans);
+  font-size: 0.65rem; font-weight: 400;
+  color: rgba(255,255,255,0.2); text-align: right; line-height: 1.6;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 560px) {
+  .outcomes { grid-template-columns: 1fr; }
+  .proof-band-inner { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+  .rf-inner { flex-direction: column; align-items: flex-start; }
+  .footer-copy { text-align: left; }
+  .cta-details { gap: 1.5rem; }
+  .cover-meta { gap: 1.5rem; }
+  .call-details-bar { grid-template-columns: 1fr 1fr; }
+  .s2-stats { flex-direction: column; gap: 2px; }
+  .s2-stat { min-width: unset; }
+  .jump-link { padding: 0.875rem 0.65rem; font-size: 0.58rem; }
+}
+
+@media print {
+  .report-nav, .jump-nav { position: static; }
+  .s6, .proof-band, .s-call { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="report-nav" role="navigation" aria-label="Report navigation">
+  <a href="https://sundayco.uk" class="nav-brand">SUNDAY CO</a>
+  <span class="nav-label">Growth Bottleneck Snapshot</span>
+</nav>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-badge">
+      <div class="badge-dot" aria-hidden="true"></div>
+      <span class="badge-text">Personalised for you</span>
+    </div>
+    <p class="cover-for">Prepared for</p>
+    <h1 class="cover-name">Hayley</h1>
+    <p class="cover-title">Your Growth Bottleneck Snapshot</p>
+    <div class="cover-meta">
+      <div>
+        <p class="meta-label">Business Type</p>
+        <p class="meta-value">Private clinic / aesthetics practice</p>
+      </div>
+      <div>
+        <p class="meta-label">Prepared by</p>
+        <p class="meta-value">Hayley Smith, Founder</p>
+      </div>
+      <div>
+        <p class="meta-label">Date</p>
+        <p class="meta-value">16 June 2026</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JUMP NAV -->
+<div class="jump-nav" role="navigation" aria-label="Jump to section">
+  <div class="jump-inner">
+    <a href="#s1" class="jump-link" data-section="s1">Your Situation</a>
+    <a href="#s2" class="jump-link" data-section="s2">The Cost</a>
+    <a href="#s3" class="jump-link" data-section="s3">Three Areas</a>
+    <a href="#s4" class="jump-link" data-section="s4">What's Possible</a>
+    <a href="#s5" class="jump-link" data-section="s5">Next Step</a>
+    <a href="#s6" class="jump-link" data-section="s6">Let's Talk</a>
+  </div>
+</div>
+
+
+<!-- ═══ SECTION 1—YOUR SITUATION ═══ -->
+<section class="rs s1" id="s1" aria-labelledby="s1-head">
+  <div class="si">
+    <p class="eyebrow">Your Situation</p>
+    <h2 class="section-headline" id="s1-head">You are spending real time <em>replying to the same client questions</em></h2>
+    <p class="section-body">You mentioned replying to the same client questions all the time—and in a private aesthetics practice, that pattern is relentless. Clients ask about treatments, pricing, downtime, what to expect, how to prepare, and whether they are suitable, and those questions arrive across every channel, every day. Each reply feels small in the moment, but collectively they are consuming a significant portion of your working week. The frustrating part is that you already know the answers—you have answered them hundreds of times—but there is no system capturing that knowledge and doing the work for you.</p>
+  </div>
+</section>
+
+
+<!-- ═══ SECTION 2—WHAT THIS IS COSTING YOU ═══ -->
+<section class="rs s2" id="s2" aria-labelledby="s2-head">
+  <div class="si">
+    <p class="eyebrow">What This Is Likely Costing You</p>
+    <h2 class="section-headline" id="s2-head">The hidden cost of <em>answering the same thing twice</em></h2>
+    <p class="section-body">What This Is Likely Costing You</p>
+    <div class="s2-stats" role="list" aria-label="Cost indicators">
+      <div class="s2-stat" role="listitem">
+        <p class="s2-stat-num">8-14hrs</p>
+        <p class="s2-stat-label" style="margin-top:0.5rem;">Lost each week to repetitive enquiry handling in a busy aesthetics practice</p>
+      </div>
+      <div class="s2-stat" role="listitem">
+        <p class="s2-stat-num">5-7x</p>
+        <p class="s2-stat-label" style="margin-top:0.5rem;">Higher conversion when enquiries receive a consistent, timely first response</p>
+      </div>
+      <div class="s2-stat" role="listitem">
+        <p class="s2-stat-num">£1,500+</p>
+        <p class="s2-stat-label" style="margin-top:0.5rem;">Estimated monthly revenue leakage from slow or inconsistent client communication</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ SECTION 3—THREE AREAS MOST AFFECTED ═══ -->
+<section class="rs s3" id="s3" aria-labelledby="s3-head">
+  <div class="si">
+    <p class="eyebrow">The Three Areas Most Affected</p>
+    <h2 class="section-headline" id="s3-head">Where the same questions <em>quietly erode your practice</em></h2>
+    <p class="s3-intro">Replying manually to the same client questions does not just cost time—it creates friction across three interconnected areas of your business that compound over time.</p>
+    <div class="areas" role="list">
+      <div class="area" role="listitem">
+        <p class="area-num">01</p>
+        <p class="area-name">Client Response Systems</p>
+        <p class="area-body">Right now, every pre-treatment question, suitability query, and pricing enquiry is being handled from scratch, by you or your team, every single time. Without a structured response system, the speed and quality of replies varies depending on how busy the clinic is—and inconsistency at the enquiry stage is one of the most common reasons aesthetics clients quietly choose someone else. A well-designed response system captures your expertise once and delivers it reliably, every time, without additional effort from you.</p>
+      </div>
+      <div class="area" role="listitem">
+        <p class="area-num">02</p>
+        <p class="area-name">Client Experience Systems</p>
+        <p class="area-body">In an aesthetics practice, the client experience begins long before they arrive for their treatment—and the pre-appointment stage is where trust is either built or quietly lost. When clients have to chase for information, receive slow replies, or get different answers at different times, the sense of being in expert, organised hands is undermined before they have even walked through the door. A consistent, thoughtful pre-treatment communication flow transforms that first impression into a genuine competitive advantage.</p>
+      </div>
+      <div class="area" role="listitem">
+        <p class="area-num">03</p>
+        <p class="area-name">Operational Efficiency Systems</p>
+        <p class="area-body">Every time you or a team member stops to answer a question you have already answered dozens of times, that is an interruption that fractures focus and slows the entire operation of the clinic. Across a full week, those interruptions add up to a meaningful chunk of capacity that could be spent on consultations, treatments, or the kind of strategic thinking that actually moves your practice forward. Operational efficiency in a clinic of your type is not about cutting corners—it is about ensuring your expertise is not trapped in a cycle of repetition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ SECTION 4—WHAT BECOMES POSSIBLE ═══ -->
+<section class="rs s4" id="s4" aria-labelledby="s4-head">
+  <div class="si">
+    <p class="eyebrow">What Becomes Possible</p>
+    <h2 class="section-headline" id="s4-head">When the right answers <em>reach clients without your effort</em></h2>
+    <p class="section-body">When your client response systems are working properly, you stop being the bottleneck between a prospective client's question and their decision to book. Your pre-treatment communication becomes something clients remark on—organised, warm, thorough—without requiring any additional effort from you each time. The hours you currently spend in reactive inbox management become available for the work only you can do: consultations, treatments, and growing the practice you have built. That shift from reactive to intentional is where most of the growth in an aesthetics practice is waiting.</p>
+    <div class="outcomes" role="list" aria-label="Outcomes">
+      <div class="outcome" role="listitem">
+        <span class="outcome-mark" aria-hidden="true">01</span>
+        <p class="outcome-text">Enquiries handled consistently without you being pulled in every time</p>
+      </div>
+      <div class="outcome" role="listitem">
+        <span class="outcome-mark" aria-hidden="true">02</span>
+        <p class="outcome-text">Clients arrive informed, prepared, and confident in your expertise</p>
+      </div>
+      <div class="outcome" role="listitem">
+        <span class="outcome-mark" aria-hidden="true">03</span>
+        <p class="outcome-text">Your team spends less time repeating and more time delivering</p>
+      </div>
+      <div class="outcome" role="listitem">
+        <span class="outcome-mark" aria-hidden="true">04</span>
+        <p class="outcome-text">More hours in the week returned to high-value clinical and strategic work</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ SECTION 5—YOUR NEXT STEP ═══ -->
+<section class="rs s5" id="s5" aria-labelledby="s5-head">
+  <div class="si">
+    <p class="eyebrow">Your Most Important Next Step</p>
+    <h2 class="section-headline" id="s5-head">The lever that <em>removes you from the repeat cycle</em></h2>
+    <p class="section-body">The single most impactful place to start is building a structured client response system that captures the questions your clients always ask and delivers accurate, on-brand answers without requiring manual input each time. This one change addresses the immediate time drain, improves the consistency of your client experience, and removes a significant source of daily interruption from your practice. It is not a complex fix—but it does need to be designed thoughtfully around how your clinic actually works. If you would like to talk through what that looks like specifically for your practice, I would love to offer you a free strategy call.</p>
+  </div>
+</section>
+
+
+<!-- ═══ PROOF STAT BAND ═══ -->
+<div class="proof-band" role="complementary" aria-label="Industry benchmark">
+  <div class="proof-band-inner">
+    <p class="proof-stat-number">8-14hrs</p>
+    <div class="proof-stat-text">
+      <p class="proof-stat-headline">Hours returned every week—on average.</p>
+      <p class="proof-stat-body">Businesses that move from manual enquiry handling to a systematic response process typically reclaim 8-14 hours a week from inbox management, missed follow-up, and repetitive back-and-forth alone.</p>
+      <p class="proof-stat-source">Based on aggregate data from businesses implementing similar systems · Results vary</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ STRATEGY CALL EXPLAINER ═══ -->
+<section class="rs s-call" id="s-call" aria-labelledby="call-head">
+  <div class="si">
+    <p class="eyebrow">The Strategy Call</p>
+    <h2 class="section-headline" id="call-head">A conversation, <em>not a sales pitch.</em></h2>
+    <p class="section-body">Here's exactly what to expect. No surprises, no pressure, no hard close at the end.</p>
+
+    <div class="call-steps" role="list">
+      <div class="call-step" role="listitem">
+        <p class="call-step-num" aria-hidden="true">01</p>
+        <div class="call-step-content">
+          <p class="call-step-title">We listen first</p>
+          <p class="call-step-body">We'll ask you to walk us through what's working, what isn't, and where your biggest operational frustrations live right now. This is a genuine conversation—not a scripted pitch.</p>
+        </div>
+      </div>
+      <div class="call-step" role="listitem">
+        <p class="call-step-num" aria-hidden="true">02</p>
+        <div class="call-step-content">
+          <p class="call-step-title">We explore what's possible</p>
+          <p class="call-step-body">Based on what you share, we'll map out the specific systems that could make the biggest difference to your business—and be honest about what's realistic and what isn't.</p>
+        </div>
+      </div>
+      <div class="call-step" role="listitem">
+        <p class="call-step-num" aria-hidden="true">03</p>
+        <div class="call-step-content">
+          <p class="call-step-title">You decide what happens next</p>
+          <p class="call-step-body">If it feels like a fit, we'll talk about next steps. If it doesn't, we'll tell you. No obligation, no follow-up pressure. Just a clear, useful conversation you'll leave with something from.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="call-details-bar" role="list" aria-label="Call details">
+      <div class="call-detail-item" role="listitem">
+        <span class="call-detail-label">Duration</span>
+        <span class="call-detail-value">45 minutes</span>
+      </div>
+      <div class="call-detail-item" role="listitem">
+        <span class="call-detail-label">Format</span>
+        <span class="call-detail-value">Video call</span>
+      </div>
+      <div class="call-detail-item" role="listitem">
+        <span class="call-detail-label">Cost</span>
+        <span class="call-detail-value">Free</span>
+      </div>
+      <div class="call-detail-item" role="listitem">
+        <span class="call-detail-label">Commitment</span>
+        <span class="call-detail-value">None</span>
+      </div>
+    </div>
+
+    <p class="reassurance-line">The only thing you'll leave with is clarity.</p>
+  </div>
+</section>
+
+
+<!-- ═══ SECTION 6—BOOK YOUR CALL ═══ -->
+<section class="s6" id="s6" aria-labelledby="s6-head">
+  <div class="s6-inner">
+    <p class="eyebrow">Ready to Go Further?</p>
+    <h2 class="s6-headline" id="s6-head">Let's talk about <em>your</em> business.</h2>
+    <p class="s6-body">You are spending time every day replying to the same client questions—and that time is worth more than your inbox is allowing. On a free strategy call, we will look specifically at where that repetition is happening in your practice, what a smarter response system would look like for your clinic, and what becomes possible for you when that capacity is returned. You will leave with a clear picture of your most valuable next step, whether you decide to work with Sunday Co or not.</p>
+    <a href="https://calendly.com/sundayco/strategycall" class="cta-btn" target="_blank" rel="noopener noreferrer">
+      Book Your Free Strategy Call
+    </a>
+    <div class="cta-details" role="list" aria-label="Call details">
+      <div role="listitem">
+        <p class="cd-val">45</p>
+        <p class="cd-lbl">Minutes</p>
+      </div>
+      <div role="listitem">
+        <p class="cd-val">Free</p>
+        <p class="cd-lbl">No charge</p>
+      </div>
+      <div role="listitem">
+        <p class="cd-val">Zero</p>
+        <p class="cd-lbl">Pressure</p>
+      </div>
+      <div role="listitem">
+        <p class="cd-val">100%</p>
+        <p class="cd-lbl">Useful</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CLOSING -->
+<div class="closing">
+  <div class="closing-inner">
+    <div class="closing-avatar">
+      <img src="data:image/jpeg;base64,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" alt="Hayley Smith, Founder of Sunday Co">
+    </div>
+    <div class="closing-text">
+      <p class="closing-line">What you have built deserves systems as strong as the expertise behind it—and I would genuinely love to help you get there, Hayley.</p>
+      <p class="closing-sig">Hayley Smith · Founder, Sunday Co</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer class="report-footer">
+  <div class="rf-inner">
+    <span class="footer-brand">SUNDAY CO</span>
+    <p class="footer-copy">
+      Growth Bottleneck Snapshot · Prepared for Hayley<br>
+      © 2026 Sunday Co. Consultancy · sundayco.uk
+    </p>
+  </div>
+</footer>
+
+<script>
+// Jump nav scroll spy
+(function() {
+  var sections = ['s1','s2','s3','s4','s5','s-call','s6'];
+  var links = document.querySelectorAll('.jump-link[data-section]');
+
+  function getActive() {
+    var scrollY = window.scrollY + 120;
+    var active = sections[0];
+    for (var i = 0; i < sections.length; i++) {
+      var el = document.getElementById(sections[i]);
+      if (el && el.offsetTop <= scrollY) active = sections[i];
+    }
+    return active;
+  }
+
+  function updateNav() {
+    var active = getActive();
+    links.forEach(function(link) {
+      link.classList.toggle('active', link.dataset.section === active);
+    });
+  }
+
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+})();
+</script>
+
+</body>
+</html>
